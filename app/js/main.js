@@ -36,7 +36,7 @@ signInForm.addEventListener("submit", (e) => {
     // clear the form
     signInForm.reset();
     // close the modal
-    $("#signinModal").modal("hide");
+    //$("#signinModal").modal("hide");
   });
 });
 
@@ -66,11 +66,10 @@ const setupPosts = (data) => {
 auth.onAuthStateChanged((user) => {
   if (user) {
     console.log("signin");
-    fs.collection("posts")
-      .get()
-      .then((snapshot) => {
-        setupPosts(snapshot.docs);
+    fs.collection("posts").get().then((snapshot) => {
+        //setupPosts(snapshot.docs);
         loginCheck(user);
+        setupPosts(snapshot.docs);
       });
   } else {
     console.log("signout");
@@ -85,7 +84,7 @@ const googleButton = document.querySelector("#googleLogin");
 googleButton.addEventListener("click", (e) => {
   e.preventDefault();
   signInForm.reset();
-  $("#signinModal").modal("hide");
+  //$("#signinModal").modal("hide");
 
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider).then((result) => {
