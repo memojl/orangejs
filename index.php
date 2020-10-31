@@ -49,7 +49,7 @@
 <main role="main" class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">Orangejs Proyects</h1>
-    <p>Use <a href="/app">Applicaion-App</a></p>
+    <p>Use <a href="/app">Application-App</a></p>
   </div>
 </main>
 
