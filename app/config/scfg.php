@@ -33,7 +33,7 @@ $url        = $dominio1.$pag_self;			//Se obtiene la url de la pagina.
 $URL        = $dominio1.$pag_url;			//Se obtiene la url completa, incluyendo variables.
 
 $page = (isset($_GET['page']))?$_GET['page']:'index';
-$path_root='MisSitios/orangejs/app/';
+$path_root=($host=='localhost')?'MisSitios/orangejs/app/':'';
 $tema='dark-app';
 $path_dashboard='dashboard/'.$tema.'/';
 $page_url=$dominio.$path_root;
