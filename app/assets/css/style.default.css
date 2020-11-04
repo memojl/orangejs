@@ -792,7 +792,7 @@ nav#sidebar span.heading {
 
 nav#sidebar .avatar {
   width: 60px;
-  height: 60px;
+  /*height: 60px;*/
   border-radius: 50%;
   overflow: hidden;
   margin-right: 15px;
@@ -1577,11 +1577,11 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
 *     LOGIN PAGE
 * ==========================================================
 */
-.login-page {
+.login-page, .registro-page {
   position: relative;
 }
 
-.login-page::before {
+.login-page::before, .registro-page::before {
   content: '';
   width: 100%;
   height: 100%;
@@ -1594,13 +1594,13 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
   right: 0;
 }
 
-.login-page .container {
+.login-page .container, .registro-page .container {
   min-height: 100vh;
   z-index: 1;
   padding: 20px;
 }
 
-.login-page .form-holder {
+.login-page .form-holder, .registro-page .form-holder {
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
@@ -1608,50 +1608,52 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
 }
 
 .login-page .form-holder .info,
-.login-page .form-holder .form {
+.login-page .form-holder .form,
+.registro-page .form-holder .info,
+.registro-page .form-holder .form {
   min-height: 70vh;
   padding: 40px;
   height: 100%;
 }
 
-.login-page .form-holder div[class*='col-'] {
+.login-page .form-holder div[class*='col-'], .registro-page .form-holder div[class*='col-'] {
   padding: 0;
 }
 
-.login-page .form-holder .info {
+.login-page .form-holder .info, .registro-page .form-holder .info {
   background: rgba(219, 101, 116, 0.95);
   color: #fff;
 }
 
-.login-page .form-holder .info h1 {
+.login-page .form-holder .info h1, .registro-page .form-holder .info h1 {
   font-size: 2.5em;
   font-weight: 700;
 }
 
-.login-page .form-holder .info p {
+.login-page .form-holder .info p, .registro-page .form-holder .info p {
   font-weight: 300;
 }
 
-.login-page .form-holder .form {
+.login-page .form-holder .form, .registro-page .form-holder .form {
   background: #2d3035;
 }
 
-.login-page .form-holder .form .form-group {
+.login-page .form-holder .form .form-group, .registro-page .form-holder .form .form-group {
   position: relative;
   margin-bottom: 30px;
 }
 
-.login-page .form-holder .form .content {
+.login-page .form-holder .form .content, .registro-page .form-holder .form .content {
   width: 100%;
 }
 
-.login-page .form-holder .form form {
+.login-page .form-holder .form form, .registro-page .form-holder .form form {
   width: 100%;
   max-width: 400px;
 }
 
 .login-page .form-holder .form #login,
-.login-page .form-holder .form #register {
+.registro-page .form-holder .form #register {
   margin-bottom: 20px;
   cursor: pointer;
   color: #fff;
@@ -1663,17 +1665,17 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
   color: #DB6574;
 }
 
-.login-page .form-holder .form small {
+.login-page .form-holder .form small, .registro-page .form-holder .form small {
   color: #aaa;
 }
 
-.login-page .form-holder .form .terms-conditions label {
+.login-page .form-holder .form .terms-conditions label, .registro-page .form-holder .form .terms-conditions label {
   cursor: pointer;
   color: #aaa;
   font-size: 0.9rem;
 }
 
-.login-page .copyrights {
+.login-page .copyrights, .registro-page .copyrights {
   width: 100%;
   z-index: 9999;
   position: absolute;
@@ -1684,7 +1686,9 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
 
 @media (max-width: 991px) {
   .login-page .form-holder .info,
-  .login-page .form-holder .form {
+  .login-page .form-holder .form,
+  .registro-page .form-holder .info,
+  .registro-page .form-holder .form {
     min-height: auto;
     padding: 40px;
     height: 100%;
