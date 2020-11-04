@@ -20,7 +20,7 @@ self.addEventListener('fetch', function(event) {//console.log(event.request.url)
 		} else {
 		  return fetch(event.request).then(function(res) {
 			return caches.open('dynamic').then(function(cache) {
-			  //cache.put(event.request.url, res.clone()).then(()=>{cache.delete('/MisSitios/orangejs/app/admin/');});
+			  //cache.put(event.request.url, res.clone()).then(()=>{cache.delete('/MisSitios/orangejs/app/');});
 			  cache.put(event.request.url, res.clone()).then(()=>{cache.delete(event.request.url);});
 			  return res;
 			});
