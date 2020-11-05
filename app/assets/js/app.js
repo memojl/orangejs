@@ -41,7 +41,6 @@ const loginCheck = (user) => {
 
 // Logout
 const logout = document.querySelector("#logout");
-
 logout.addEventListener("click", (e) => {
   e.preventDefault();
   auth.signOut().then(() => {
@@ -51,7 +50,6 @@ logout.addEventListener("click", (e) => {
 
 // SingIn
 const signInForm = document.querySelector("#login-form");
-
 signInForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = signInForm["login-email"].value;
@@ -91,11 +89,10 @@ const setupPosts = (data) => {
 // list for auth state changes
 auth.onAuthStateChanged((user) => {
   if (user) {
-    console.log("signin");
-    console.log(user.email);
+    console.log("signin:" + user.email);
+    console.log(user);
     leerDatos(user.email);
     fs.collection("posts").get().then((snapshot) => {
-      //setupPosts(snapshot.docs);
       loginCheck(user);
       setupPosts(snapshot.docs);
     });
@@ -116,13 +113,11 @@ googleButton.addEventListener("click", (e) => {
   auth.signInWithPopup(provider).then((result) => {
       console.log(result);
       console.log("google sign in");
-      guardarDatos(result.user);
     })
     .catch(err => {
       console.log(err);
     })
 });
-
 
 //Guardar automaticamente
 function guardarDatos(user) {
@@ -143,9 +138,11 @@ function leerDatos(userlogin) {
   const uid = document.querySelector("#id_code_google");
   db.ref("vcard_signup").on("child_added", function (s) {
     var user = s.val();
+    var f = (user.foto == null)?'assets/img/photos/sinfoto.png':user.foto;
+    var u = (user.usuario == null)?'<a href="#">Sin Nombre</a>':user.usuario;
     if (user.email == userlogin) {
-      const cover = '<img src="' + user.foto + '" class="img-fluid rounded-circle">';
-      const nombre = '<h1 class="h5">' + user.usuario + '</h1>';
+      const cover = '<img src="' + f + '" class="img-fluid rounded-circle">';
+      const nombre = '<h1 class="h5">' + u + '</h1>';
       const correo = userlogin;
       const ID_user = user.uid;
 

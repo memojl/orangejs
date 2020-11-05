@@ -1,7 +1,6 @@
 <?php 
 function insertar_db($data,$ramat){
 $url='https://crud-ce022.firebaseio.com/'.$ramat.'.json';
-//$url='https://console.firebase.google.com/u/0/project/crud-ce022/firestore/data~2F'.$ramat;
 $ch=curl_init();
 curl_setopt($ch,CURLOPT_URL,$url);
 curl_setopt($ch,CURLOPT_POST,1);
