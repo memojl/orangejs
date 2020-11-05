@@ -25,11 +25,7 @@ var ext='';
 var id='';
 var path_url1 = path_url.replace("/", "");
 //var path_root=(host=='localhost')?path_url1:'';
-<<<<<<< HEAD
 var path_root=(host=='localhost')?'MisSitios/orangejs/app/':'orangejs/app/';
-=======
-var path_root=(host=='localhost')?'MisSitios/orangejs/app/':'app/';
->>>>>>> b03abe82b25a284011d853955fd23f3aad5e6e15
 console.log('path_root='+path_root);
 var tema = 'default';
 console.log('tema='+tema);
