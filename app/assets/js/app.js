@@ -92,6 +92,7 @@ auth.onAuthStateChanged((user) => {
     console.log("signin:" + user.email);
     console.log(user);
     leerDatos(user.email);
+    tarjetas(user.uid);
     fs.collection("posts").get().then((snapshot) => {
       loginCheck(user);
       setupPosts(snapshot.docs);
@@ -118,6 +119,8 @@ googleButton.addEventListener("click", (e) => {
       console.log(err);
     })
 });
+
+//FUNCIONES
 
 //Guardar automaticamente
 function guardarDatos(user) {
@@ -151,5 +154,57 @@ function leerDatos(userlogin) {
       mail.innerHTML = correo;
       uid.innerHTML = ID_user;
     }
+  });
+}
+
+function tarjetas(userid){
+  const vcards = document.querySelector("#vcontent");
+  var html='';
+  db.ref("vcard_vcard").on("child_added", function (v) {
+    var vcard = v.val();
+    var ID = (vcard.ID == null)?'':vcard.ID;
+    var uid = (vcard.uid == null)?'':vcard.uid;
+    var profile = (vcard.profile == null)?'':vcard.profile;
+    var cover = (vcard.cover == null)?'sinfoto.png':vcard.cover;
+    var nombre = (vcard.nombre == null)?'':vcard.nombre;
+    var puesto = (vcard.puesto == null)?'':vcard.puesto;
+    var email = (vcard.email == null)?'':vcard.email;
+    var cell = (vcard.cell == null)?'':vcard.cell;
+    var web = (vcard.web == null)?'':vcard.web;
+    var visible = (vcard.visible == null)?'':vcard.visible;
+    if(uid==userid){
+      var card = `
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="user-block block text-center">
+          <div class="avatar"><img src="./assets/img/photos/${cover}" alt="..." class="img-fluid">
+            <div class="order dashbg-2">1st</div>
+          </div><a href="#" class="user-title">
+            <h3 class="h5">${nombre}</h3><span>${puesto}</span></a>
+          <div class="contributions">${profile}</div>
+          <div class="details d-flex">
+            <div class="item"><i class="icon-info"></i><strong>150</strong></div>
+            <div class="item"><i class="fa fa-gg"></i><strong>340</strong></div>
+            <div class="item"><i class="icon-flow-branch"></i><strong>460</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="user-block block text-center">
+            <a href="#" class="user-title">
+            <h3 class="h5">Samuel Watson</h3><span>@samwatson</span></a>
+          <div class="contributions">${web}</div>
+          <div class="details d-flex">
+            <div class="item"><i class="fa fa-facebook"></i><strong>80</strong></div>
+            <div class="item"><i class="fa fa-linkedin"></i><strong>420</strong></div>
+            <div class="item"><i class="icon-flow-branch"></i><strong>272</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+      `;
+      html += card;
+      vcards.innerHTML = '<div class="container-fluid">' + html + '</div>';      
+    }    
   });
 }
