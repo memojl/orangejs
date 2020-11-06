@@ -153,8 +153,7 @@ function tarjetas(userid){
     var web = (vcard.web == null)?'':vcard.web;
     var visible = (vcard.visible == null)?'':vcard.visible;
     if(uid==userid){
-      var card = `
-    <div class="row">
+      var card = `    
       <div class="col-lg-4">
         <div class="user-block block text-center">
           <div class="avatar"><img src="./assets/img/photos/${cover}" alt="..." class="img-fluid">
@@ -163,28 +162,15 @@ function tarjetas(userid){
             <h3 class="h5">${nombre}</h3><span>${puesto}</span></a>
           <div class="contributions">${profile}</div>
           <div class="details d-flex">
-            <div class="item"><i class="icon-info"></i><strong>150</strong></div>
-            <div class="item"><i class="fa fa-gg"></i><strong>340</strong></div>
-            <div class="item"><i class="icon-flow-branch"></i><strong>460</strong></div>
+            <div class="item"><i class="fa fa-facebook"></i><strong>150</strong></div>
+            <div class="item"><i class="fa fa-linkedin"></i><strong>340</strong></div>
+            <div class="item"><i class="fa fa-instagram"></i><strong>460</strong></div>
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="user-block block text-center">
-            <a href="#" class="user-title">
-            <h3 class="h5">Samuel Watson</h3><span>@samwatson</span></a>
-          <div class="contributions">${web}</div>
-          <div class="details d-flex">
-            <div class="item"><i class="fa fa-facebook"></i><strong>80</strong></div>
-            <div class="item"><i class="fa fa-linkedin"></i><strong>420</strong></div>
-            <div class="item"><i class="icon-flow-branch"></i><strong>272</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
       `;
       html += card;
-      vcards.innerHTML = '<div class="container-fluid">' + html + '</div>';      
+      vcards.innerHTML = '<div class="container-fluid"><div class="row">' + html + '</div></div>';      
     }    
   });
 }
