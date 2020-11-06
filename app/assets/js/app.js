@@ -64,27 +64,6 @@ signInForm.addEventListener("submit", (e) => {
   });
 });
 
-// Posts
-const postList = document.querySelector(".posts");
-const setupPosts = (data) => {
-  if (data.length) {
-    let html = "";
-    data.forEach((doc) => {
-      const post = doc.data();
-      const li = `
-       <li class="list-group-item list-group-item-action">
-         <h5>${post.title}</h5>
-         <p>${post.content}</p>
-       </li>
-     `;
-      html += li;
-    });
-    postList.innerHTML = html;
-  } else {
-    postList.innerHTML = '<h4 class="text-white">Login to See Posts (Git/master Version)</h4>';
-  }
-};
-
 // events
 // list for auth state changes
 auth.onAuthStateChanged((user) => {
@@ -93,13 +72,14 @@ auth.onAuthStateChanged((user) => {
     console.log(user);
     leerDatos(user.email);
     tarjetas(user.uid);
-    fs.collection("posts").get().then((snapshot) => {
+    loginCheck(user);
+    /*fs.collection("posts").get().then((snapshot) => {
       loginCheck(user);
       setupPosts(snapshot.docs);
-    });
+    });*/
   } else {
     console.log("signout");
-    setupPosts([]);
+    //setupPosts([]);
     loginCheck(user);
   }
 });
