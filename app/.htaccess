@@ -15,8 +15,8 @@ RewriteRule ^(\w+)/(\w+)/?$ index.html?mod=$1&ext=$2
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d 
-# RewriteRule ^(\w+)/(\w+)/(\w+)/?$ index.html?mod=$1&ext=$2&id=$3
-RewriteRule ^(\w+)/(\w+)/([0-9]+)\-([a-zA-Z0-9-]*)/?$ index.html?mod=$1&ext=$2&id=$3
+RewriteRule ^(\w+)/(\w+)/(\w+)/?$ index.html?mod=$1&ext=$2&id=$3
+# RewriteRule ^(\w+)/(\w+)/([0-9]+)\-([a-zA-Z0-9-]*)/?$ index.html?mod=$1&ext=$2&id=$3
 </IfModule>
 
 
