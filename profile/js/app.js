@@ -23,16 +23,23 @@ function filename(){
 let perfil = filename();
 console.log(perfil);
 
-//function profileId(){
- db.ref("vcard_vcard").on("child_added", function (v) {
+const vcardTable = db.ref().child("vcard_vcard");
+const vcardTable1 = db.ref("vcard_vcard");
+
+vcardTable.orderByChild("profile").equalTo(perfil).on('child_added',function(datos){
+   var vcard=datos.val();
+   console.log(vcard);
+   console.log(vcard.nombre);
+});
+
+vcardTable1.on("child_added", function (v) {
    var vcard = v.val();
    if(vcard.profile==perfil){
       console.log(vcard);
-      return vcard;
+      console.log(vcard.nombre);
    }
- });
+});
 
+//console.log(vcardTable);
 
-//var dataPro = profileId;
-console.log(vcard);
  
