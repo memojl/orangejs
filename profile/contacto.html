@@ -62,11 +62,9 @@
                      <h4 class="top"></h4>
                      <div class="img ng-hide" ng-show="loadDemo &amp;&amp; view.avatar" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-avatar&#39;)" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div>
                      <div class="img" ng-show="!loadDemo &amp;&amp; view.avatar" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div>
-                     <h2 class="name dynamicTextColor ng-binding" ng-show="view.firstname || view.lastname">Multiportal
-                        Jimenez
-                     </h2>
+                     <h2 class="name dynamicTextColor ng-binding" ng-bind-html="view.firstname|nl2br || view.lastname|nl2br"></h2>
                      <h2 class="name dynamicTextColor ng-binding ng-hide" ng-hide="view.firstname || view.lastname">Multiportal</h2>
-                     <h6 class="title dynamicTextColor ng-binding">Ing de Software</h6>
+                     <h6 class="title dynamicTextColor ng-binding" ng-bind-html="view.job|nl2br"></h6>
                   </div>
                   <div class="vcard-functions" ng-show="view.numbers_mobile ||  view.numbers_phone ||  view.email || ((view.city ||view.street|| view.zip|| view.country) &amp;&amp; view.show_directions)">
                      <div class="vcard-functions-wrapper">
@@ -113,7 +111,7 @@
                         <small>Birthday</small>
                      </div>
                      <div class="vcard-row" ng-show="view.bio">
-                        <h4 ng-bind-html="view.bio|nl2br" class="ng-binding">Desarrollo Web y Marketing Digital</h4>
+                        <h4 ng-bind-html="view.bio|nl2br" class="ng-binding"></h4>
                      </div>
                      <div class="vcard-separator" ng-show="view.bio"></div>
                      <div class="vcard-row" ng-show="view.numbers_mobile">
@@ -158,11 +156,11 @@
                         </div>
                         <!-- end ngIf: view.show_directions -->
                      </div>
-                     <div class="vcard-separator" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country"></div>
+                     <div class="vcard-separator ng-hide" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country"></div>
                      <div class="vcard-row" ng-show="view.website">
                         <i class="icon icon-earth"></i>
                         <h4><a href="http://multiportal.com.mx/" target="_newLink" class="ng-binding">multiportal.com.mx</a></h4>
-                        <small>Website</small>
+                        <small>Sitio Web</small>
                      </div>
                      <div class="vcard-separator" ng-show="view.bio || view.numbers_mobile || view.numbers_phone || view.email || view.street || view.zip || view.city || view.country || view.company "></div>
                      <div id="socialmedialinksContainer">
@@ -806,7 +804,9 @@
                  $scope.loadDemo = parent && typeof parent.ImHere === "function";
          
                  //Get the json data form the file
-                 json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account11056955\/10848504_1.png?0.6198895260504853","avatar_extra":{"zoom":100,"background":"#ffffff"},"address":{"autocomplete":"Cuarzo 200-1"},"code":{"channels":[{"input_prefix_label":"URL","link":"facebook.com\/multiportal","label":"","name":"Facebook"},{"input_prefix_label":"@","link":"multiportalm","label":"","name":"Twitter"},{"input_prefix_label":"@","link":"multiportal.com_mx","label":"","name":"Instagram"},{"input_prefix_label":"URL","link":"linkedin.com\/company\/multiportal\/","label":"","name":"LinkedIn"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account11056955\/10849018_1.png?0.3673685868747689","firstname":"Multiportal","lastname":"Jimenez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","showPreview":1,"sharing":true,"company":"Multiportal","job":"Ing de Software","street_number":"200","street":"Cuarzo","state":"Qro.","country":"Mexico","city":"Queretaro","zip":"76148","website":"multiportal.com.mx","bio":"Desarrollo Web y Marketing Digital"};
+                 json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"www.facebook.com\/multiportal","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556708_1.png?0.39897709494591793","firstname":"Guillermo","lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","company":"Multiportal","job":"Desarrollador Web","website":"www.multiportal.com.mx","showPreview":1,"avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556709_1.png?0.0635479782185353","sharing":true,"bio":"Desarrollo de Paginas Web y Marketing Digital"};
+
+                 //json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account11056955\/10848504_1.png?0.6198895260504853","avatar_extra":{"zoom":100,"background":"#ffffff"},"address":{"autocomplete":"Cuarzo 200-1"},"code":{"channels":[{"input_prefix_label":"URL","link":"facebook.com\/multiportal","label":"","name":"Facebook"},{"input_prefix_label":"@","link":"multiportalm","label":"","name":"Twitter"},{"input_prefix_label":"@","link":"multiportal.com_mx","label":"","name":"Instagram"},{"input_prefix_label":"URL","link":"linkedin.com\/company\/multiportal\/","label":"","name":"LinkedIn"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account11056955\/10849018_1.png?0.3673685868747689","firstname":"Multiportal","lastname":"Jimenez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","showPreview":1,"sharing":true,"company":"Multiportal","job":"Ing de Software","street_number":"200","street":"Cuarzo","state":"Qro.","country":"Mexico","city":"Queretaro","zip":"76148","website":"multiportal.com.mx","bio":"Desarrollo Web y Marketing Digital"};
          
          //        //Upgrade old vcards created before 13.04 with show_directions parameter
          //        if (angular.isUndefined(json_data.show_directions))
