@@ -7,7 +7,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Reescribir la URL solicitada por el usuario
 #   Entrada:  NOMBRE/
 #   Salida:   index.html?mod=NOMBRE
-RewriteRule ^(\w+)/?$ index.html?mod=$1
+ RewriteRule ^(\w+)/?$ index.html?mod=$1
+# RewriteRule ^([0-9]+)\-([a-zA-Z0-9-]*)/?$ index.html?mod=$1
 </IfModule>
 
 

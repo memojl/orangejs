@@ -20,26 +20,45 @@ function filename(){
    var rutaRelativa = rutaAbsoluta.substring( posicionUltimaBarra + "/".length , rutaAbsoluta.length );
    return rutaRelativa;
 }
-let perfil = filename();
+
+var perfil = filename();
 console.log(perfil);
+var url_json = 'https://crud-ce022.firebaseio.com/vcard_vcard/'+perfil+'.json';
+console.log(url_json);
 
 const vcardTable = db.ref().child("vcard_vcard");
 const vcardTable1 = db.ref("vcard_vcard");
 
-vcardTable.orderByChild("profile").equalTo(perfil).on('child_added',function(datos){
+function perfilx(){
+ vcardTable.orderByChild("profile").equalTo(perfil).on('child_added',function(datos){
    var vcard=datos.val();
+   document.getElementById('pro').value=JSON.stringify(vcard);
    console.log(vcard);
-   console.log(vcard.nombre);
-});
+ });
+}
 
-vcardTable1.on("child_added", function (v) {
-   var vcard = v.val();
+function perfilv(){
+ vcardTable1.on("child_added", function (datos) {
+   var vcard = datos.val();
    if(vcard.profile==perfil){
-      console.log(vcard);
-      console.log(vcard.nombre);
+      document.getElementById('pro').value=JSON.stringify(vcard);
+      //console.log(vcard);
    }
-});
+ });
+}
 
-//console.log(vcardTable);
+function leerIn(){
+  var data=document.getElementById('pro').value;
+  console.log(data);
+}
+setTimeout(leerIn, 5000);
+perfilx();
 
- 
+//var url_json = 'https://crud-ce022.firebaseio.com/vcard_vcard/-MLBBSCOdiImZ-yxdJmx.json';
+//function getJSON(url) { return get(url).then(JSON.parse);}
+//var myVar=getJSON(url_json);
+// Se hace el fetch a tu url
+//let myVar=fetch(url_json).then(function(response) {return response.json();});
+//let myVar=fetch(url_json).then(response => response.json()).then(data => {return data;});
+
+//console.log(myVar);//console.log(Object.PromiseResult(myVar));
