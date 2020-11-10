@@ -63,7 +63,7 @@
                      <h4 class="top"></h4>
                      <div class="img ng-hide" ng-show="loadDemo &amp;&amp; view.avatar" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-avatar&#39;)" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div>
                      <div class="img" ng-show="!loadDemo &amp;&amp; view.avatar" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div>
-                     <h2 class="name dynamicTextColor ng-binding" ng-bind-html="view.firstname|nl2br"></h2>
+                     <h2 id="nom" class="name dynamicTextColor ng-binding" ng-bind-html="view.firstname|nl2br"></h2>
                      <h2 class="name dynamicTextColor ng-binding ng-hide" ng-hide="view.firstname || view.lastname">Multiportal</h2>
                      <h6 class="title dynamicTextColor ng-binding" ng-bind-html="view.job|nl2br"></h6>
                   </div>
@@ -386,22 +386,15 @@
                </div>
             </div>
          </div>
-         <!--    -->
+         <!--   -->
       </div>
 
-      <!-- SDK FIREBASE -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!--script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script-->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-  <!-- Don't change the format for any other products. -->
-  <!-- etc. -->
-  <!--script src="http://localhost/MisSitios/orangejs/profile/js/lib.js" type="text/javascript"></script-->
-  <script src="http://localhost/MisSitios/orangejs/profile/js/app.js" type="text/javascript"></script>
+    <!-- SDK FIREBASE -->
+    <!--script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script-->
+    <!--script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script-->
+    <!--script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script-->
+        <!--script src="http://localhost/MisSitios/orangejs/profile/js/lib.js" type="text/javascript"></script-->
+    <!--script src="http://localhost/MisSitios/orangejs/profile/js/app.js" type="text/javascript"></script-->
 
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <script type="text/javascript" src="js/angular.rendering.min.js"></script>
@@ -821,7 +814,7 @@
                  $scope.loadDemo = parent && typeof parent.ImHere === "function";
          
                  //Get the json data form the file
-                 json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"www.facebook.com\/multiportal","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556708_1.png?0.39897709494591793","firstname":perfil,"lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","company":"Multiportal","job":"Desarrollador Web","website":"www.multiportal.com.mx","showPreview":1,"avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556709_1.png?0.0635479782185353","sharing":true,"bio":"Desarrollo de Paginas Web y Marketing Digital"};
+                 json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"www.facebook.com\/multiportal","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556708_1.png?0.39897709494591793","firstname":"perfil","lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","company":"Multiportal","job":"Desarrollador Web","website":"www.multiportal.com.mx","showPreview":1,"avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556709_1.png?0.0635479782185353","sharing":true,"bio":"Desarrollo de Paginas Web y Marketing Digital"};
 
                  //json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account11056955\/10848504_1.png?0.6198895260504853","avatar_extra":{"zoom":100,"background":"#ffffff"},"address":{"autocomplete":"Cuarzo 200-1"},"code":{"channels":[{"input_prefix_label":"URL","link":"facebook.com\/multiportal","label":"","name":"Facebook"},{"input_prefix_label":"@","link":"multiportalm","label":"","name":"Twitter"},{"input_prefix_label":"@","link":"multiportal.com_mx","label":"","name":"Instagram"},{"input_prefix_label":"URL","link":"linkedin.com\/company\/multiportal\/","label":"","name":"LinkedIn"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account11056955\/10849018_1.png?0.3673685868747689","firstname":"Multiportal","lastname":"Jimenez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","showPreview":1,"sharing":true,"company":"Multiportal","job":"Ing de Software","street_number":"200","street":"Cuarzo","state":"Qro.","country":"Mexico","city":"Queretaro","zip":"76148","website":"multiportal.com.mx","bio":"Desarrollo Web y Marketing Digital"};
          
@@ -1461,5 +1454,8 @@
          
          /*]]>*/
       </script>
+
+      <script src="http://localhost/MisSitios/orangejs/profile/js/app.js" type="text/javascript"></script>
+
    </body>
 </html>
