@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!-- saved from url=(0022)https://qrco.de/bboYKg -->
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" itemscope="" itemtype="http://qrco.de/bboYKg?trackSharing=1" class="ng-scope">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" itemscope="" class="ng-scope" lang="es-MX">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
       <link rel="stylesheet" type="text/css" href="css/template_normal.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
       <script type="text/javascript">
          /*<![CDATA[*/
          YII_CSRF_TOKEN='10fa4590707411327c3ab21d31060cf4d2380407';
@@ -15,11 +16,38 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="noindex, nofollow">
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="shortcut icon" href="https://qrco.de/img/favicon/favicon.ico" type="image/x-icon">
-      <link rel="apple-touch-icon" href="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853">
-      <link rel="apple-touch-icon" sizes="76x76" href="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853">
-      <link rel="apple-touch-icon" sizes="120x120" href="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853">
-      <link rel="apple-touch-icon" sizes="152x152" href="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853">
+
+
+      <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+      <link rel="icon" type="image/x-icon" href="./favicon.ico">
+      <link rel="manifest" href="../app/bloques/WPA/manifest.json">
+      <meta name="Vcard-app" content="Add to Home">
+	  <link  rel = "apple-touch-icon"  tallas = "57x57"  href = "../app/bloques/WPA/icon/apple-icon-57x57.png" > 
+	  <link  rel = "apple-touch-icon"  tallas = "60x60"  href = "../app/bloques/WPA/icon/apple-icon-60x60.png" > 
+	  <link  rel = "apple-touch-icon "  tamanos = " 72x72 "  href = "../app/bloques/WPA/icon/apple-icon-72x72.png " > 
+	  <link  rel = "apple-touch-icon "  tamanos = "76x76"  href = "../app/bloques/WPA/icon/apple-icon-76x76.png" > 
+	  <link  rel = "apple-touch-icon "  tamanos = " 114x114 "  href = "../app/bloques/WPA/icon/apple-icon-114x114.png "> 
+	  <link  rel = "apple-touch-icon"  tallas = "120x120"  href = "../app/bloques/WPA/icon/apple-icon-120x120.png" > 
+	  <link  rel = "apple-touch-icon"  tallas = "144x144"  href = "../app/bloques/WPA/icon/apple-icon-144x144.png" > 
+	  <link  rel = "apple-touch-icon "  tamanos = " 152x152 "  href = "../app/bloques/WPA/icon/apple-icon-152x152.png" > 
+	  <link  rel = "apple-touch-icon "  tamanos = "180x180"  href = "../app/bloques/WPA/icon/apple-icon-180x180.png" > 
+	  <link  rel = "icon"  type = "image/png"  tallas = "16x16"  href = "../app/bloques/WPA/icon/favicon-16x16.png" > 
+	  <link  rel = "icon"  type = "image/png"  tamanos = "32x32"  href = "../app/bloques/WPA/icon/favicon-32x32.png" > 
+	  <link  rel = "icon"  type = "image/png"  tallas = "96x96"  href = "../app/bloques/WPA/icon/favicon-96x96.png" > 
+	  <link  rel = "icon"  type = "image/png"  tamanos = "192x192"  href = "../app/bloques/WPA/icon/android-icon-192x192.png" > 
+	  <!-- link  rel = "manifest" href="/manifest.json" --> 
+	  <meta  name ="msapplication-TileColor"  content = "#ffffff" > 
+	  <meta  name = "msapplication-TileImage"  content = "../app/bloques/WPA/icon/ms-icon-144x144.png" > 
+	  <meta  name = "theme-color"  content = "#ffffff" >
+	  <!-- iconos -->
+	  <link rel="apple-touch-icon" href="../app/bloques/WPA/icon/apple-icon-180x180.png">
+	  <link rel="shortcut icon" sizes="16x16" href="../app/bloques/WPA/icon/favicon-16x16.png">
+	  <link rel="shortcut icon" sizes="196x196" href="../app/bloques/WPA/icon/favicon-96x96.png">
+	  <link rel="apple-touch-icon-precomposed" href="../app/bloques/WPA/icon/apple-icon-152x152.png">
+	  <meta name="apple-mobile-web-app-capable" content="yes">
+	  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+
       <!--Facebook meta-->
       <meta property="og:url" content="http://qrco.de/bboYKg?trackSharing=1">
       <meta property="og:title" content="Multiportal Jimenez">
@@ -42,13 +70,12 @@
    </head>
    <body id="dvcard-body" ng-controller="ComplexController" class="whiteTheme">
     <div>
-     <input id="pro" type="text" value="">
+     <input id="pro" type="hidden" value="">
      <div id="idp"></div>
-     <div id="cov"></div>
      <div id="prof"></div>
     </div>
     
-      <div class="loading-welcome active welcome-screen" ng-style="{&#39;background-color&#39;: view.code.welcome_extra.background || view.welcome_extra.background}" style="background-color: rgb(255, 255, 255); display: none;">
+      <!--div class="loading-welcome active welcome-screen" ng-style="{&#39;background-color&#39;: view.code.welcome_extra.background || view.welcome_extra.background}" style="background-color: rgb(255, 255, 255); display: none;">
          <div class="progress">
             <div class="loading-bar indeterminate" ng-style="{&#39;background-color&#39;: view.code.color1 || view.color1}" style="background-color: rgb(0, 0, 0);"></div>
          </div>
@@ -59,7 +86,7 @@
             &#39;animation-iteration-count&#39; :  view.showPreview == &#39;infinite&#39; ? &#39;infinite&#39; : &#39;&#39;,
             &#39;animation-direction&#39; :  view.showPreview == &#39;infinite&#39; ? &#39;alternate&#39; : &#39;&#39;
             }" src="fotos/10849018_1.png" style="max-width: 100px; max-height: 100px; display: inline;">
-      </div>
+      </div-->
       <div class="vcard-template style2" id="rootElement">
          <div class="bgd-shadow"></div>
          <div class="page-home page" style="opacity: 1; display: block;">
@@ -67,37 +94,29 @@
                <div class="vcard-header-wrapper">
                   <div class="vcard-top-info">
                      <h4 class="top"></h4>
-                     <div class="img ng-hide" ng-show="loadDemo &amp;&amp; view.avatar" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-avatar&#39;)" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div>
-                     <div class="img" ng-show="!loadDemo &amp;&amp; view.avatar" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div>
-                     <h2 id="nom" class="name dynamicTextColor ng-binding" ng-bind-html="view.firstname|nl2br"></h2>
-                     <!--h2 class="name dynamicTextColor ng-binding ng-hide" ng-hide="view.firstname || view.lastname">Multiportal</h2-->
+                     <div id="cov"></div>
+                     <!--div class="img" ng-show="!loadDemo &amp;&amp; view.avatar" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account11056955/10848504_1.png?0.6198895260504853&quot;);"></div-->
+                     <h2 id="nom" class="name dynamicTextColor ng-binding">Nombre</h2>
+                     <!--h2 class="name dynamicTextColor ng-binding" ng-bind-html="view.firstname|nl2br">Nombre</h2-->
                      <h6 id="pue" class="title dynamicTextColor ng-binding">Puesto</h6>
                      <!--h6 class="title dynamicTextColor ng-binding" ng-bind-html="view.job|nl2br">Puesto</h6-->
                   </div>
                   <div class="vcard-functions" ng-show="view.numbers_mobile ||  view.numbers_phone ||  view.email || ((view.city ||view.street|| view.zip|| view.country) &amp;&amp; view.show_directions)">
                      <div class="vcard-functions-wrapper">
-                        <!--
-                        <a class="header-button ng-hide" ng-show="loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-call&#39;)" ng-style="{&#39;transition&#39;: loadDemo ? &#39;none&#39; : &#39;all 0.15s ease&#39;}" style="transition: all 0.15s ease 0s;">
-                        <i class="icon-phone dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Llamar</small>
-                        </a>
-                        <a class="header-button ng-hide" ng-show="loadDemo &amp;&amp; (view.email)" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-email&#39;)" ng-style="{&#39;transition&#39;: loadDemo ? &#39;none&#39; : &#39;all 0.15s ease&#39;}" style="transition: all 0.15s ease 0s;">
-                        <i class="icon-send dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Email</small>
-                        </a>-->
-
-                        <a href="tel:4426002842" ng-show="!loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)">
-                        <i class="icon-phone dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Llamar</small>
-                        </a>
-                        <a href="mailto:multiportal@outlook.com?subject=From%20my%20vCard&amp;body=" target="_newEmail" ng-show="!loadDemo &amp;&amp; (view.email)">
-                        <i class="icon-send dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Email</small>
-                        </a>
-
+                        <span id="btn-cell"></span>
+                        <span id="btn-email"></span>
+                        <!--div id="btn-ubicacion"></div-->
+                        <!--a href="tel:4426002842" ng-show="!loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)">
+                            <i class="icon-phone dynamicTextColor"></i>
+                            <small class="dynamicTextColor">Llamar</small>
+                        </a-->
+                        <!--a href="mailto:multiportal@outlook.com?subject=From%20my%20vCard&amp;body=" target="_newEmail" ng-show="!loadDemo &amp;&amp; (view.email)">
+                            <i class="icon-send dynamicTextColor"></i>
+                            <small class="dynamicTextColor">Email</small>
+                        </a-->
                         <a ng-show="((view.street || view.city )&amp;&amp; view.show_directions)" ng-click="callAction($event, &#39;mapAction&#39;)" class="last-element">
-                        <i class=" icon-map-pin dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Directions</small>
+                            <i class=" icon-map-pin dynamicTextColor"></i>
+                            <small class="dynamicTextColor">Directions</small>
                         </a>
                      </div>
                   </div>
@@ -122,7 +141,8 @@
                         <small>Birthday</small>
                      </div>
                      <div class="vcard-row" ng-show="view.bio">
-                        <h4 ng-bind-html="view.bio|nl2br" class="ng-binding"></h4>
+                        <h4 id="bio" class="ng-binding">Descripcion</h4>
+                        <!--h4 ng-bind-html="view.bio|nl2br" class="ng-binding">Descripcion</h4-->
                      </div>
                      <div class="vcard-separator" ng-show="view.bio"></div>
                      <div class="vcard-row" ng-show="view.numbers_mobile">
@@ -231,19 +251,19 @@
                                  <div class="fab-body fab-step1">
                                     <div class="iconFab icon-fab-close"></div>
                                     <div class="fab-header" ng-style="{color: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" style="color: rgb(0, 255, 0);">
-                                       Save Contact Data                
+                                       Guardar datos de Contacto                
                                     </div>
-                                    <div class="fab-header text-regular">How would you like to save contact data?</div>
+                                    <div class="fab-header text-regular">Como desea guardar los datos de contacto?</div>
                                     <ul>
                                        <li open-popup="email" class="addContactAction" ng-click="!loadDemo ? toggleFabStep(1,2) : callAction($event, &#39;addContactAction&#39;)">
                                           <i class="iconFab icon-fab-share-email"></i>
                                           <a href="https://qrco.de/bboYKg">
-                                          Send by Email                        </a>
+                                          Enviar por Email</a>
                                        </li>
                                        <li ng-click="loadDemo ? callAction($event, &#39;addContactAction&#39;) : &#39;&#39;" class="addContactAction">
                                           <i class="iconFab icon-fab-share-savecontact"></i>
                                           <!-- ngIf: !loadDemo --><a ng-if="!loadDemo" href="http://qrco.de/handlePost/bboYKg/?download=true" rel="external" class="ng-scope">
-                                          Save to My Phone                        </a><!-- end ngIf: !loadDemo -->
+                                          Guardar en el Telefono</a><!-- end ngIf: !loadDemo -->
                                           <!-- ngIf: loadDemo -->
                                        </li>
                                     </ul>
@@ -252,8 +272,8 @@
                                     <div class="iconFab icon-fab-close"></div>
                                     <div class="icon-event-back" ng-click="toggleFabStep(2,1)"></div>
                                     <div class="fab-header mt-10" ng-style="{color: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" style="color: rgb(0, 255, 0);">
-                                       <span class="emailText1">Send by Email</span>
-                                       <span class="emailText2">Email was send</span>
+                                       <span class="emailText1">Enviar por Email</span>
+                                       <span class="emailText2">Email fue enviado</span>
                                     </div>
                                     <div class="fab-header text-regular">
                                        <span class="emailText1">Send contact details using email.</span>
@@ -272,7 +292,7 @@
                            <a id="prime" class="fab" ng-style="{background:view.color2||&#39;#607d8b&#39;}" style="background: rgb(0, 255, 0);">
                            <span class="hidden-xs" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : &#39;white&#39;}" style="color: white;">
                            <i class="prime iconFab icon-fab-share-add" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : &#39;white&#39;}" style="color: white;"></i>
-                           Download vCard        </span>
+                           Descargar Tarjeta</span>
                            <i class="prime iconFab icon-fab-share-add visible-xs" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : &#39;white&#39;}" style="color: white;"></i>
                            </a>
                         </div>
@@ -310,7 +330,7 @@
                                           <input id="shortUrl" value="http://qrco.de/bboYKg" readonly="">
                                           <button id="copyButton">Copy</button>
                                           <div class="ifCopySucceed ng-hide" ng-show="ifCopySucceed">
-                                             Text copied to the clipboard.                        
+                                             Texto copiado en el portapales.                        
                                           </div>
                                        </li>
                                     </ul>
@@ -320,7 +340,7 @@
                            <!-- ngIf: view.sharing --><a id="prime" class="fab white-bgd ng-scope" ng-if="view.sharing" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;shareAction&#39;)">
                            <span class="hidden-xs">
                            <i class="prime icon iconFab icon-fab-share"></i>
-                           Share this page        </span>
+                           Compartir esta Tarjeta</span>
                            <i class="prime icon iconFab icon-fab-share visible-xs"></i>
                            </a><!-- end ngIf: view.sharing -->
                         </div>
@@ -333,7 +353,7 @@
                                  <div class="dialog-body pull-left ng-binding">
                                  </div>
                                  <a class="text-regular-blue mt-20" ng-click="closeGotItDialog()">
-                                 Got it                </a>
+                                 Ir</a>
                               </div>
                            </div>
                         </div>
@@ -349,7 +369,7 @@
                      <div class="event-section-title " ng-style="getBackgroundColor();" style="background: rgb(0, 0, 0);">
                         <div class="event-content-container">
                            <i class="icon-event-back dynamicTextColor" ng-click="switchPages(&#39;page-maps&#39;,&#39;page-home&#39;, false)"></i>
-                           <div class="event-title dynamicTextColor">Location</div>
+                           <div class="event-title dynamicTextColor">Localización</div>
                         </div>
                      </div>
                   </div>
@@ -370,7 +390,7 @@
                            <input id="addressValue" type="hidden" ng-value="view.street + &#39;,&#39;  + view.city + &#39;,&#39; + view.country " value="Cuarzo,Queretaro,Mexico">
                            <div class="floated-container">
                               <a class="event-slim-button ripplelink left_20 mt-10" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" ng-click="callAction($event, &#39;redirectToMap&#39;)" style="color: rgb(0, 255, 0);"><span class="ink animate" style="height: 164px; width: 164px; top: -67px; left: 15.5px;"></span>
-                              Show directions            </a>
+                              Mostrar Direcciones</a>
                            </div>
                         </div>
                      </div>
