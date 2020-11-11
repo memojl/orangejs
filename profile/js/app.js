@@ -28,6 +28,8 @@ var perfil = filename();
 console.log(perfil);
 var url_json = 'https://crud-ce022.firebaseio.com/vcard_vcard.json';
 console.log(url_json);
+//const shareLink = document.querySelectorAll("#shareLink");
+
 fetch(url_json).then(response => response.json()).then(data => {
   var val=Object.values(data);
   for(i=0;i<val.length;i++){reg=val[i];
@@ -40,8 +42,22 @@ fetch(url_json).then(response => response.json()).then(data => {
       document.getElementById('btn-email').innerHTML='<a href="mailto:'+reg.email+'?subject=Desde%20Mi%20Tarjeta&body=" target="_newEmail""><i class="icon-send dynamicTextColor"></i><small class="dynamicTextColor">Email</small></a>';
 
       document.getElementById('bio').innerHTML=reg.descripcion;
-      document.getElementById('emp').innerHTML=reg.empresa;
       document.getElementById('pue').innerHTML=reg.puesto;
+      document.getElementById('cell').innerHTML=reg.cell;
+      document.getElementById('cell').href='tel:'+reg.cell;
+      //document.getElementById('tel').innerHTML=reg.tel;
+      document.getElementById('mailto').innerHTML=reg.email;
+      document.getElementById('mailto').href='mailto:'+reg.email;
+      document.getElementById('empresa').innerHTML=reg.empresa;
+      document.getElementById('web').innerHTML=reg.web;
+      document.getElementById('web').href=reg.web;
+
+      document.getElementById('send-email').href=URL;
+      document.getElementById('share-facebook').href=URL;
+      document.getElementById('share-twitter').href=URL;
+      document.getElementById('share-whatsapp').href='whatsapp://send?text='+URL;
+      document.getElementById('share-email').href='mailto:?body='+URL;
+      document.getElementById('shortUrl').value=URL;
     }
   }
   /*

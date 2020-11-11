@@ -22,15 +22,15 @@
       <link rel="icon" type="image/x-icon" href="./favicon.ico">
       <link rel="manifest" href="../app/bloques/WPA/manifest.json">
       <meta name="Vcard-app" content="Add to Home">
-	  <link  rel = "apple-touch-icon"  tallas = "57x57"  href = "../app/bloques/WPA/icon/apple-icon-57x57.png" > 
-	  <link  rel = "apple-touch-icon"  tallas = "60x60"  href = "../app/bloques/WPA/icon/apple-icon-60x60.png" > 
-	  <link  rel = "apple-touch-icon "  tamanos = " 72x72 "  href = "../app/bloques/WPA/icon/apple-icon-72x72.png " > 
-	  <link  rel = "apple-touch-icon "  tamanos = "76x76"  href = "../app/bloques/WPA/icon/apple-icon-76x76.png" > 
-	  <link  rel = "apple-touch-icon "  tamanos = " 114x114 "  href = "../app/bloques/WPA/icon/apple-icon-114x114.png "> 
-	  <link  rel = "apple-touch-icon"  tallas = "120x120"  href = "../app/bloques/WPA/icon/apple-icon-120x120.png" > 
-	  <link  rel = "apple-touch-icon"  tallas = "144x144"  href = "../app/bloques/WPA/icon/apple-icon-144x144.png" > 
-	  <link  rel = "apple-touch-icon "  tamanos = " 152x152 "  href = "../app/bloques/WPA/icon/apple-icon-152x152.png" > 
-	  <link  rel = "apple-touch-icon "  tamanos = "180x180"  href = "../app/bloques/WPA/icon/apple-icon-180x180.png" > 
+	  <link  rel = "apple-touch-icon"  tallas="57x57"  href = "../app/bloques/WPA/icon/apple-icon-57x57.png" > 
+	  <link  rel = "apple-touch-icon"  tallas="60x60"  href = "../app/bloques/WPA/icon/apple-icon-60x60.png" > 
+	  <link  rel = "apple-touch-icon"  tamanos="72x72"  href = "../app/bloques/WPA/icon/apple-icon-72x72.png " > 
+	  <link  rel = "apple-touch-icon"  tamanos="76x76"  href = "../app/bloques/WPA/icon/apple-icon-76x76.png" > 
+	  <link  rel = "apple-touch-icon"  tamanos="114x114"  href = "../app/bloques/WPA/icon/apple-icon-114x114.png "> 
+	  <link  rel = "apple-touch-icon"  tallas="120x120"  href = "../app/bloques/WPA/icon/apple-icon-120x120.png" > 
+	  <link  rel = "apple-touch-icon"  tallas="144x144"  href = "../app/bloques/WPA/icon/apple-icon-144x144.png" > 
+	  <link  rel = "apple-touch-icon"  tamanos="152x152 "  href = "../app/bloques/WPA/icon/apple-icon-152x152.png" > 
+	  <link  rel = "apple-touch-icon"  tamanos="180x180"  href = "../app/bloques/WPA/icon/apple-icon-180x180.png" > 
 	  <link  rel = "icon"  type = "image/png"  tallas = "16x16"  href = "../app/bloques/WPA/icon/favicon-16x16.png" > 
 	  <link  rel = "icon"  type = "image/png"  tamanos = "32x32"  href = "../app/bloques/WPA/icon/favicon-32x32.png" > 
 	  <link  rel = "icon"  type = "image/png"  tallas = "96x96"  href = "../app/bloques/WPA/icon/favicon-96x96.png" > 
@@ -147,12 +147,12 @@
                      <div class="vcard-separator" ng-show="view.bio"></div>
                      <div class="vcard-row" ng-show="view.numbers_mobile">
                         <i class="icon icon-phone"></i>
-                        <h4><a href="tel:4426002842" class="ng-binding">4426002842</a></h4>
+                        <h4><a id="cell" href="tel:4426002842" class="ng-binding">4426002842</a></h4>
                         <small>Movil</small>
                      </div>
                      <div class="vcard-row pt0 ng-hide" ng-show="view.numbers_phone">
                         <i ng-show="view.numbers_phone &amp;&amp; !view.numbers_mobile" class="icon icon-phone ng-hide"></i>
-                        <h4><a href="tel:" class="ng-binding"></a></h4>
+                        <h4><a id="tel" href="tel:" class="ng-binding"></a></h4>
                         <small>Telefono</small>
                      </div>
                      <div class="vcard-row pt0 ng-hide" ng-show="view.numbers_fax">
@@ -162,13 +162,16 @@
                      <div class="vcard-separator" ng-show="view.numbers_mobile || view.numbers_phone"></div>
                      <div class="vcard-row" ng-show="view.email">
                         <i class="icon icon-mail"></i>
-                        <h4><a href="mailto:multiportal@outlook.com" target="_newLink" class="ng-binding">multiportal@outlook.com</a></h4>
+                        <h4>
+                            <a id="mailto" href="mailto:multiportal@outlook.com" target="_newLink" class="ng-binding">multiportal@outlook.com</a>
+                            <!--a href="mailto:multiportal@outlook.com" target="_newLink" class="ng-binding">multiportal@outlook.com</a-->
+                        </h4>
                         <small>Email</small>
                      </div>
                      <div class="vcard-separator" ng-show="view.street || view.zip || view.city || view.country || view.company "></div>
                      <div class="vcard-row" ng-show="view.company">
                         <i class="icon icon-work"></i>
-                        <h4 id="emp" class="ng-binding"></h4>
+                        <h4 id="empresa" class="ng-binding"></h4>
                         <small>Empresa</small>
                      </div>
                      <div class="vcard-separator" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country"></div>
@@ -183,14 +186,14 @@
                         <!-- ngIf: view.show_directions -->
                         <div class="floated-container ng-scope" ng-if="view.show_directions" ng-show="(view.street &amp;&amp; view.city) || (view.city &amp;&amp; view.country) || view.city || view.country">
                            <a class="event-slim-button ripplelink left_15 mt-10" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" ng-click="callAction($event, &#39;mapAction&#39;)" style="color: rgb(0, 255, 0);"><span class="ink animate" style="height: 0px; width: 0px; top: 722px; left: 566px;"></span>
-                           Show on map            </a>
+                           Mostrar Mapa</a>
                         </div>
                         <!-- end ngIf: view.show_directions -->
                      </div>
                      <div class="vcard-separator ng-hide" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country"></div>
                      <div class="vcard-row" ng-show="view.website">
                         <i class="icon icon-earth"></i>
-                        <h4><a href="http://multiportal.com.mx/" target="_newLink" class="ng-binding">multiportal.com.mx</a></h4>
+                        <h4><a id="web" href="http://multiportal.com.mx/" target="_newLink" class="ng-binding">multiportal.com.mx</a></h4>
                         <small>Sitio Web</small>
                      </div>
                      <div class="vcard-separator" ng-show="view.bio || view.numbers_mobile || view.numbers_phone || view.email || view.street || view.zip || view.city || view.country || view.company "></div>
@@ -257,7 +260,7 @@
                                     <ul>
                                        <li open-popup="email" class="addContactAction" ng-click="!loadDemo ? toggleFabStep(1,2) : callAction($event, &#39;addContactAction&#39;)">
                                           <i class="iconFab icon-fab-share-email"></i>
-                                          <a href="https://qrco.de/bboYKg">
+                                          <a id="send-email" href="https://qrco.de/bboYKg">
                                           Enviar por Email</a>
                                        </li>
                                        <li ng-click="loadDemo ? callAction($event, &#39;addContactAction&#39;) : &#39;&#39;" class="addContactAction">
@@ -303,32 +306,32 @@
                               <div class="chat">
                                  <div class="fab-body">
                                     <div class="iconFab icon-fab-close"></div>
-                                    <div class="fab-header" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" style="color: rgb(0, 255, 0);">Share</div>
+                                    <div class="fab-header" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" style="color: rgb(0, 255, 0);">Compartir</div>
                                     <ul class="ssk-block ssk-md" data-url="http://qrco.de/bboYKg?trackSharing=1" data-text="">
                                        <li>
                                           <i class="iconFab icon-fab-share-facebook"></i>
-                                          <a href="https://qrco.de/bboYKg" class="ssk ssk-text ssk-facebook">Facebook</a>
+                                          <a id="share-facebook" href="https://qrco.de/bboYKg" class="ssk ssk-text ssk-facebook">Facebook</a>
                                        </li>
                                        <li>
                                           <i class="iconFab icon-fab-share-twitter"></i>
-                                          <a href="https://qrco.de/bboYKg" class="ssk ssk-text ssk-twitter">Twitter</a>
+                                          <a id="share-twitter" href="https://qrco.de/bboYKg" class="ssk ssk-text ssk-twitter">Twitter</a>
                                        </li>
-                                       <li>
+                                       <!--li>
                                           <i class="iconFab icon-fab-share-googleplus"></i>
                                           <a href="https://qrco.de/bboYKg" class="ssk ssk-text ssk-google-plus">Google+</a>
-                                       </li>
+                                       </li-->
                                        <li>
                                           <i class="iconFab icon-fab-share-whatsapp"></i>
-                                          <a href="whatsapp://send?text=http://qrco.de/bboYKg?trackSharing=1" class="ssk ssk-whatsapp">Whatsapp</a>
+                                          <a id="share-whatsapp" href="whatsapp://send?text=http://qrco.de/bboYKg?trackSharing=1" class="ssk ssk-whatsapp">Whatsapp</a>
                                        </li>
                                        <li>
                                           <i class="iconFab icon-fab-share-email"></i>
-                                          <a href="mailto:?body=http://qrco.de/bboYKg?trackSharing=1" target="_blank">Email</a>
+                                          <a id="share-email" href="mailto:?body=http://qrco.de/bboYKg?trackSharing=1" target="_blank">Email</a>
                                        </li>
                                        <li>
                                           <i class="iconFab icon-fab-share-message"></i>
-                                          <input id="shortUrl" value="http://qrco.de/bboYKg" readonly="">
-                                          <button id="copyButton">Copy</button>
+                                          <input id="shortUrl" value="" readonly="">
+                                          <button id="copyButton">Copiar</button>
                                           <div class="ifCopySucceed ng-hide" ng-show="ifCopySucceed">
                                              Texto copiado en el portapales.                        
                                           </div>
