@@ -204,44 +204,7 @@
                            <div class="socialMedia-container" ng-show="view.code.channels.length &gt; 0">
                               <label>Social Media</label>
                               <i class="icon-social-media"></i>
-                              <div class="channels-padding mt-0">
-                                 <!-- ngRepeat: channel in view.code.channels track by $index -->
-                                 <a href="http://facebook.com/multiportal" target="_blank" class="channel-container ng-scope" id="channel-item-Facebook" ng-click="loadDemo ? callAction($event,&#39;channelAction&#39;) : &#39;&#39;" ng-repeat="channel in view.code.channels track by $index">
-                                    <div class="table-cell-middle pl-55 pos-relative">
-                                       <div class="channel-bgd-facebook">
-                                          <!-- ngIf: channel.name != 'Snapchat' --><i ng-if="channel.name != &#39;Snapchat&#39;" class="icon-social-facebook"></i><!-- end ngIf: channel.name != 'Snapchat' -->
-                                          <!-- ngIf: channel.name == 'Snapchat' -->
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <!-- end ngRepeat: channel in view.code.channels track by $index -->
-                                 <a href="http://www.twitter.com/multiportalm" target="_blank" class="channel-container ng-scope" id="channel-item-Twitter" ng-click="loadDemo ? callAction($event,&#39;channelAction&#39;) : &#39;&#39;" ng-repeat="channel in view.code.channels track by $index">
-                                    <div class="table-cell-middle pl-55 pos-relative">
-                                       <div class="channel-bgd-twitter">
-                                          <!-- ngIf: channel.name != 'Snapchat' --><i ng-if="channel.name != &#39;Snapchat&#39;" class="icon-social-twitter"></i><!-- end ngIf: channel.name != 'Snapchat' -->
-                                          <!-- ngIf: channel.name == 'Snapchat' -->
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <!-- end ngRepeat: channel in view.code.channels track by $index -->
-                                 <a href="http://www.instagram.com/multiportal.com_mx" target="_blank" class="channel-container ng-scope" id="channel-item-Instagram" ng-click="loadDemo ? callAction($event,&#39;channelAction&#39;) : &#39;&#39;" ng-repeat="channel in view.code.channels track by $index">
-                                    <div class="table-cell-middle pl-55 pos-relative">
-                                       <div class="channel-bgd-instagram">
-                                          <!-- ngIf: channel.name != 'Snapchat' --><i ng-if="channel.name != &#39;Snapchat&#39;" class="icon-social-instagram"></i><!-- end ngIf: channel.name != 'Snapchat' -->
-                                          <!-- ngIf: channel.name == 'Snapchat' -->
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <!-- end ngRepeat: channel in view.code.channels track by $index -->
-                                 <a href="http://linkedin.com/company/multiportal/" target="_blank" class="channel-container ng-scope" id="channel-item-LinkedIn" ng-click="loadDemo ? callAction($event,&#39;channelAction&#39;) : &#39;&#39;" ng-repeat="channel in view.code.channels track by $index">
-                                    <div class="table-cell-middle pl-55 pos-relative">
-                                       <div class="channel-bgd-linkedin">
-                                          <!-- ngIf: channel.name != 'Snapchat' --><i ng-if="channel.name != &#39;Snapchat&#39;" class="icon-social-linkedin"></i><!-- end ngIf: channel.name != 'Snapchat' -->
-                                          <!-- ngIf: channel.name == 'Snapchat' -->
-                                       </div>
-                                    </div>
-                                 </a>
-                                 <!-- end ngRepeat: channel in view.code.channels track by $index -->
+                              <div id="social-media" class="channels-padding mt-0">
                               </div>
                            </div>
                         </div>
@@ -311,10 +274,10 @@
                                           <i class="iconFab icon-fab-share-facebook"></i>
                                           <a id="share-facebook" href="http://multiportal.com.mx/vcard/profile/" class="ssk ssk-text ssk-facebook">Facebook</a>
                                        </li>
-                                       <li>
+                                       <!--li>
                                           <i class="iconFab icon-fab-share-twitter"></i>
                                           <a id="share-twitter" href="http://multiportal.com.mx/vcard/profile/" class="ssk ssk-text ssk-twitter">Twitter</a>
-                                       </li>
+                                       </li-->
                                        <!--li>
                                           <i class="iconFab icon-fab-share-googleplus"></i>
                                           <a href="http://multiportal.com.mx/vcard/profile/" class="ssk ssk-text ssk-google-plus">Google+</a>
