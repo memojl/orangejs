@@ -64,27 +64,6 @@ signInForm.addEventListener("submit", (e) => {
   });
 });
 
-// Posts
-const postList = document.querySelector(".posts");
-const setupPosts = (data) => {
-  if (data.length) {
-    let html = "";
-    data.forEach((doc) => {
-      const post = doc.data();
-      const li = `
-       <li class="list-group-item list-group-item-action">
-         <h5>${post.title}</h5>
-         <p>${post.content}</p>
-       </li>
-     `;
-      html += li;
-    });
-    postList.innerHTML = html;
-  } else {
-    postList.innerHTML = '<h4 class="text-white">Login to See Posts (Git/master Version)</h4>';
-  }
-};
-
 // events
 // list for auth state changes
 auth.onAuthStateChanged((user) => {
@@ -93,13 +72,14 @@ auth.onAuthStateChanged((user) => {
     console.log(user);
     leerDatos(user.email);
     tarjetas(user.uid);
-    fs.collection("posts").get().then((snapshot) => {
+    loginCheck(user);
+    /*fs.collection("posts").get().then((snapshot) => {
       loginCheck(user);
       setupPosts(snapshot.docs);
-    });
+    });*/
   } else {
     console.log("signout");
-    setupPosts([]);
+    //setupPosts([]);
     loginCheck(user);
   }
 });
@@ -173,8 +153,7 @@ function tarjetas(userid){
     var web = (vcard.web == null)?'':vcard.web;
     var visible = (vcard.visible == null)?'':vcard.visible;
     if(uid==userid){
-      var card = `
-    <div class="row">
+      var card = `    
       <div class="col-lg-4">
         <div class="user-block block text-center">
           <div class="avatar"><img src="./assets/img/photos/${cover}" alt="..." class="img-fluid">
@@ -183,28 +162,15 @@ function tarjetas(userid){
             <h3 class="h5">${nombre}</h3><span>${puesto}</span></a>
           <div class="contributions">${profile}</div>
           <div class="details d-flex">
-            <div class="item"><i class="icon-info"></i><strong>150</strong></div>
-            <div class="item"><i class="fa fa-gg"></i><strong>340</strong></div>
-            <div class="item"><i class="icon-flow-branch"></i><strong>460</strong></div>
+            <div class="item"><i class="fa fa-facebook"></i><strong>150</strong></div>
+            <div class="item"><i class="fa fa-linkedin"></i><strong>340</strong></div>
+            <div class="item"><i class="fa fa-instagram"></i><strong>460</strong></div>
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="user-block block text-center">
-            <a href="#" class="user-title">
-            <h3 class="h5">Samuel Watson</h3><span>@samwatson</span></a>
-          <div class="contributions">${web}</div>
-          <div class="details d-flex">
-            <div class="item"><i class="fa fa-facebook"></i><strong>80</strong></div>
-            <div class="item"><i class="fa fa-linkedin"></i><strong>420</strong></div>
-            <div class="item"><i class="icon-flow-branch"></i><strong>272</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
       `;
       html += card;
-      vcards.innerHTML = '<div class="container-fluid">' + html + '</div>';      
+      vcards.innerHTML = '<div class="container-fluid"><div class="row">' + html + '</div></div>';      
     }    
   });
 }
