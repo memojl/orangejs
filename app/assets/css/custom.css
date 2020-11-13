@@ -1,1 +1,11 @@
 /* your styles go here */
+.modal-header,.modal-footer{
+  display:inherit !important;
+}
+.modal-dialog{
+  width: 80% !important;
+}
+.modal-footer{
+  width: 100% !important;
+  text-align: right !important;
+}

@@ -32,7 +32,8 @@
                      <!-- form start -->
                      
                         <div class="box-body">
-                           <div class="col-md-4">
+                         <div class="row">
+                           <div class="col-md-4 col-xs-4">
                               <div class="form-group">   
                                  <label for="cover">Imagen</label>
                                  <div id="imagen">'.$file.'</div>
@@ -67,7 +68,7 @@
                                  <input type="hidden" class="form-control" id="user" name="user" value="'.$_SESSION["username"].'" placeholder="usuario">
                               </div>
                            </div>
-                           <div class="col-md-4">
+                           <div class="col-md-4 col-xs-4">
                               <div class="form-group">
                                  <label for="profile">Profile</label>
                                  <div class="input-group">
@@ -111,13 +112,13 @@
                                  </div>
                               </div>                                
                            </div>
-                           <div class="col-md-4">
+                           <div class="col-md-4 col-xs-4">
                               <div class="form-group">
                                  <label for="empresa">Empresa</label>
                                  <div id="sel_empresa">
                                     <div class="input-group">
                                        <span class="input-group-addon"><i class="fa fa-industry"></i></span>
-                                       '.select_empresa($tabla='vcard_empresas',$url_api,$empresa).'
+                                       
                                     </div>
                                     <div style="padding: 5px 12px"><a href="javascript:add_empresa(1);" title="Agregar Empresa"><i class="fa fa-plus"></i></a></div>
                                  </div>
@@ -161,6 +162,7 @@
                                  <div>
                               </div>
                            </div>                     
+                         </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
