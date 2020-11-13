@@ -265,3 +265,6 @@ div[class^='channel-bgd-']{border-radius:50%;width:40px;height:40px;float:left;t
 .icon-fab-share-whatsapp:before {
   content: "\2b";
 }
+.icon-user:before {
+  content: "\f007";
+}

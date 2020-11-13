@@ -162,15 +162,17 @@ function tarjetas(userid){
             <h3 class="h5">${nombre}</h3><span>${puesto}</span></a>
           <div class="contributions">${profile}</div>
           <div class="details d-flex">
-            <div class="item"><i class="fa fa-facebook"></i><strong>150</strong></div>
-            <div class="item"><i class="fa fa-linkedin"></i><strong>340</strong></div>
-            <div class="item"><i class="fa fa-instagram"></i><strong>460</strong></div>
+            <div class="item"><a href="`+page_url+`../profile/${profile}"><i class="fa fa-vcard"></i><strong>Ver</strong></a></div>
+            <div class="item btn-edit" data-toggle="modal" data-target="#addVcard" title="Editar" style="cursor:pointer;"><i class="fa fa-edit"></i><strong>Editar</strong></div>
+            <div class="item btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i><strong>Borrar</strong></div>
           </div>
         </div>
       </div>
       `;
       html += card;
-      vcards.innerHTML = '<div class="container-fluid"><div class="row">' + html + '</div></div>';      
+      if(mod=='tarjetas'){
+        vcards.innerHTML = '<div class="container-fluid"><div class="row">' + html + '</div></div>';
+      }            
     }    
   });
 }

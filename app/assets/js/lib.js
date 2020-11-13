@@ -61,11 +61,12 @@ console.log('/*Funciones*/');
 /*FUNCIONES*/
 
 function menu(){
-    var menu = `<a href="${page_url}">Inicio</a> | 
-    <a href="${page_url}productos/">Productos</a> | 
-    <a href="${page_url}blog/">Blog</a> | 
-    <a href="${page_url}contacto/">Contacto</a>`
-    $('#menu').html(menu);
+    var menu = `<li class="active"><a href="${page_url}"> <i class="icon-dashboard"></i>Dashboard </a></li>
+    <li><a href="${page_url}perfil"> <i class="fa fa-user"></i>Perfil </a></li>
+    <li><a href="${page_url}tarjetas"> <i class="fa fa-vcard"></i>Tarjetas </a></li>
+    <li><a href="${page_url}empresas"> <i class="fa fa-industry"></i>Empresas </a></li>
+    <li id="logout"><a href="#"> <i class="icon-logout"></i>Salir </a></li>`;    
+    $('.list-unstyled').html(menu);
 }
 
 function modulos(){
@@ -78,10 +79,9 @@ $(function() {
           console.log('La pagina Existe');
         },
         error : function(){
-          $("#app-modulo").html('<div class="alert alert-danger">Error:404 La pagina No existe</div>');
+          $("#app-modulo").html('<div class="alert alert-danger">Error:404 La pagina No existe<br><a href="./app">Inicio</a></div>');
           console.log('Error:404 La pagina No existe');
-        }
-        
+        }        
     });
 });
 }
@@ -108,8 +108,8 @@ function inicio(){
     console.log('Corriendo funcion inicio');
     getQueryVariable();
     menu();
-    if(mod!='Home' && mod!='registro'){modulos();}
-    //modulos();
+    //if(mod!='Home' && mod!='registro'){modulos();}
+    modulos();
     //form_tema();
 }
 
